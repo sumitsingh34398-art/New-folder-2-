@@ -43,7 +43,6 @@ def login():
 def dashboard():
     if 'user_id' not in session: 
         return redirect(url_for('login'))
-    # Saare events fetch karke dashboard par bhejna
     events = Event.query.all()
     return render_template('dashboard.html', events=events)
 
