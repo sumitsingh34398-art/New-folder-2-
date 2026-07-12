@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-4">
+    <h2>Edit Event</h2>
+    <form method="POST">
+        <input type="text" name="title" value="{{ event.title }}" class="form-control" required>
+        <input type="text" name="category" value="{{ event.category }}" class="form-control">
+        <input type="text" name="organizer" value="{{ event.organizer }}" class="form-control">
+        <input type="date" name="date" value="{{ event.date }}" class="form-control">
+        <input type="text" name="venue" value="{{ event.venue }}" class="form-control">
+        <textarea name="description" class="form-control">{{ event.description }}</textarea>
+        <button type="submit" class="btn btn-primary mt-3">Update Event</button>
+    </form>
+</div>
+{% endblock %}
