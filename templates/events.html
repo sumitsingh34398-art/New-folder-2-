@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Upcoming Events</h2>
+    <div class="row">
+        {% for e in events %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ e.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ e.category }}</h6>
+                    <p class="card-text">{{ e.description[:100] }}...</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Organizer:</strong> {{ e.organizer }}</li>
+                        <li><strong>Date:</strong> {{ e.date }}</li>
+                        <li><strong>Venue:</strong> {{ e.venue }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
